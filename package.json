@@ -1,0 +1,30 @@
+{
+  "name": "comida",
+  "private": true,
+  "type": "module",
+  "description": "Plan semanal de comidas por grupos, recetario y registro de lo que comes · Worker de Cloudflare + Neon",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "local": "node servidor-local.mjs",
+    "demo": "node servidor-local.mjs --demo",
+    "test": "node --test \"pruebas/*.test.mjs\"",
+    "esquema": "node db/aplicar.mjs",
+    "comprobar": "node comprobar.mjs",
+    "iconos": "node iconos.mjs",
+    "dev": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "esbuild": "^0.25.0",
+    "lucide-react": "^0.470.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.0",
+    "wrangler": "^4.135.0"
+  }
+}

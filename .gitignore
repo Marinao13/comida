@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+*.log
+.datos-local/
+public/app.js
+.datos-demo/
+.claude/settings.local.json

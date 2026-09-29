@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "comida",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // Solo la URL principal (la que protege Access). Sin URLs de vista previa por versión.
+  "workers_dev": true,
+  "preview_urls": false,
+
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+
+  "observability": { "enabled": true },
+
+  // DATABASE_URL (Neon) NO va aquí: es un secreto → npx wrangler secret put DATABASE_URL
+  // En local se lee de .dev.vars (copia .dev.vars.example).
+  "vars": {
+    "COMIDA_TEAM_DOMAIN": "https://holy-king-98e1.cloudflareaccess.com",
+    // AUD de la aplicación de Access para ESTE Worker: Zero Trust → Access → Applications →
+    // nueva aplicación self-hosted para comida.<subdominio>.workers.dev y pega aquí su
+    // "Application Audience (AUD) Tag". Vacío = la API responde 500, nunca abre.
+    "COMIDA_AUD": "",
+    // Correos que pueden entrar, separados por comas. Vacío = cualquier identidad que Access acepte.
+    "COMIDA_PERMITIDOS": "mariano4822@gmail.com"
+  }
+}

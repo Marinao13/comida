@@ -1,0 +1,3 @@
+# Copia este archivo a .dev.vars (no se sube a ningún sitio) y pega la cadena de conexión de Neon.
+# En producción: npx wrangler secret put DATABASE_URL
+DATABASE_URL=postgresql://usuario:clave@ep-xxxx.eu-central-1.aws.neon.tech/comida?sslmode=require

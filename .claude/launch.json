@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "comida-demo",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["servidor-local.mjs", "--demo"],
+      "port": 8790
+    },
+    {
+      "name": "comida-local",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["servidor-local.mjs"],
+      "port": 8790
+    }
+  ]
+}
